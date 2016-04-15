@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Sanity" parallel="classes"
+	thread-count="10" preserve-order="true">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+	<test name="Sanity">
+		<classes>
+			<class name="com.google.yatra.sprint01.Sprint01_AV702" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
