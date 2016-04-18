@@ -15,7 +15,6 @@ public class YatraHomePage extends WebElements {
 	private BasePage basepage;
 	
 	 By yatrapage= By.xpath("(//*[contains(text(),'Yatra')])[1]");
-	 By playStore= By.xpath("//i[@title='Play Store']/..");
 	 By playstorePage=By.xpath("//*[@class='id-app-title']");
 
 	
@@ -33,8 +32,9 @@ public class YatraHomePage extends WebElements {
 		return getpageTitle();
 	}
 	
-	public PlayStore clickPlayStore()
+	public PlayStore clickPlayStore(String name)
 	{
+		By playStore= By.xpath("//i[@title='"+name+"']/..");
 		click(playStore);
 		waitforElement(playstorePage);
 		return basepage.PlayStore(driver,driverWait,basepage);

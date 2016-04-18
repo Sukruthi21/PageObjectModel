@@ -2,6 +2,7 @@ package com.google.yatra.sprint01;
 
 import org.testng.annotations.Test;
 
+import com.google.yatra.dataFactory.DataFactory;
 import com.google.yatra.pages.PlayStore;
 import com.google.yatra.pages.YatraHomePage;
 import com.google.yatra.util.BasePage;
@@ -24,6 +25,16 @@ public class Sprint01_AV702  implements Setup{
 	private final String sURL="http://www.yatra.com";
 	private YatraHomePage yatrahomePage;
 	private BasePage basePage;
+	private com.google.yatra.dao.YatraHomePage homePage;
+	private DataFactory dataFactory;
+	
+	@BeforeClass
+	public void beforeClass()
+	{
+		 homePage = new com.google.yatra.dao.YatraHomePage();
+		 dataFactory = new DataFactory();
+		dataFactory.homePage(homePage);
+	}
 	
 	
 	@BeforeMethod
@@ -41,15 +52,12 @@ public class Sprint01_AV702  implements Setup{
 	  Reporter.log("Expected:::"+yatrahomePage.verifyHomePage());
 	  Assert.assertEquals(true, yatrahomePage.verifyHomePage().contains("Yatra"));
 	  Reporter.log("Actual:::"+yatrahomePage.verifyHomePage().contains("Yatra"));
-	  PlayStore playStore=yatrahomePage.clickPlayStore();
-	  playStore.searchBox("redbus");;
+	  PlayStore playStore=yatrahomePage.clickPlayStore(homePage.getXpathExample());
+	  playStore.searchBox(homePage.getSorgin());;
 //	  PlayStore playStore1=yatrahomePage.clickPlayStore();
 	  logger.info("Error Message");
 	  
   }
 
-  @BeforeClass
-  public void beforeClass() {
-  }
 
 }
