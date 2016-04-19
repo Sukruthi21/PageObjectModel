@@ -12,7 +12,7 @@ public class DataFactory {
 	{
 		homePage.setSDestination("USA");
 		homePage.setSorgin("India");
-		homePage.setXpathExample("Sukr"+RandomStringUtils.randomAlphanumeric(3));
+		homePage.setXpathExample("Sukruthi"+RandomStringUtils.randomAlphanumeric(3));
 	}
 	
 	public void FacebookloginPage(com.google.yatra.dao.FacebookloginPage facebooklogin)
