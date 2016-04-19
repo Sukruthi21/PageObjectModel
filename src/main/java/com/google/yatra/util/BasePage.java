@@ -3,6 +3,7 @@ package com.google.yatra.util;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.google.facebook.FacebookHomepage;
 import com.google.yatra.pages.PlayStore;
 
 public class BasePage {
@@ -10,6 +11,7 @@ public class BasePage {
 	private WebDriver driver;
 	private WebDriverWait driverWait;
 	private BasePage basePage;
+	private FacebookHomepage facebookhomepage;
 	
 	public BasePage() {
 	}
@@ -29,5 +31,15 @@ public class BasePage {
 			return playStore;
 		}
 		return playStore;
+	}
+
+	public FacebookHomepage FacebookHomepage(WebDriver driver2, WebDriverWait driverWait2, BasePage basepage2) {
+		// TODO Auto-generated method stub
+		if (facebookhomepage==null) {
+			facebookhomepage= new FacebookHomepage(driver, driverWait,basePage);
+		} else {
+			return facebookhomepage;
+		}
+		return facebookhomepage;
 	}
 }

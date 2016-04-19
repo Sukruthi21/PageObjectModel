@@ -36,8 +36,12 @@ public abstract class WebElements extends Waits{
 	public void enterText(By by,String stext)
 	{
 		waitforElement(by);
-
 		driver.findElement(by).sendKeys(stext);
+	}
+	
+	public int elements(By by)
+	{
+		return driver.findElements(by).size();
 	}
 	
 }
