@@ -8,6 +8,7 @@
 	<test name="Sanity">
 		<classes>
 			<class name="com.google.yatra.sprint01.Sprint01_AV702" />
+			<class name="com.facebook.sprint02.Facebook_AV702" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

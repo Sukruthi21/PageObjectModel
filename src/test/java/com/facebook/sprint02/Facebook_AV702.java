@@ -34,6 +34,7 @@ public class Facebook_AV702  implements Setup{
 	private FacebookloginPage facebookloginPage;
 	private DataFactory dataFactory;
 	
+
 	@BeforeClass
 	public void beforeClass()
 	{
@@ -42,6 +43,7 @@ public class Facebook_AV702  implements Setup{
 		 dataFactory = new DataFactory();
 		dataFactory.homePage(homePage);
 		dataFactory.FacebookloginPage(facebookloginPage);
+		logger.info("Testing logger");
 	}
 	
 	
